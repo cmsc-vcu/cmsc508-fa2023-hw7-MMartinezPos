@@ -12,7 +12,6 @@ format:
 
 (include a brief description of what is in this document)
 
-(Please clean up any comments that I included.  This is a scaffold document.)
 
 GITHUB URL:  <https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-MMartinezPos>
 
@@ -96,7 +95,10 @@ except Exception as e:
 
 ## Crows-foot diagram
 
-(add a description of the diagram and what the reader is seeing.)
+The Diagram shows the relationships between Customers and their Orders and the Delivery-Address. 
+CUSTOMER uses one or many DELIVERY-ADDRESSes but a DELIVERY-ADDRESS can also exist without being associated with a CUSTOMER. 
+CUSTOMER can place many ORDERs, but each ORDER is associated with exactly one CUSTOMER. 
+
 
 ```{mermaid}
 %%| echo: false
@@ -119,7 +121,7 @@ For the people, skills, and roles tables, provide a description of each table an
 
 ### People table
 
-The *people* table contains elements that describe ... 
+The *people* table contains elements that describe people's personal info such as first and last name, email, linkedin URL, headshot url, discord handle, bio, and the date they joined. 
 
 Below is a list of data in the *people* table.
 
@@ -149,8 +151,18 @@ Below is a list of data in the *skills* table.
 ```{python}
 #| echo: false
 #| eval: true
-
+sql = f"""
+select * from skills;
+"""
 ## Add code to list roles table here
+try:
+    df = pd.read_sql(sql,cnx)
+    df
+except Exception as e:
+    message = str(e)
+    print(f"An error occurred:\n\n{message}\n\nIgnoring and moving on.")
+    df = pd.DataFrame()
+df
 ```
 
 ### Roles table
@@ -162,8 +174,18 @@ Below is a list of data in the *roles* table.
 ```{python}
 #| echo: false
 #| eval: true
-
+sql = f"""
+select * from roles;
+"""
 ## Add code to list roles table here
+try:
+    df = pd.read_sql(sql,cnx)
+    df
+except Exception as e:
+    message = str(e)
+    print(f"An error occurred:\n\n{message}\n\nIgnoring and moving on.")
+    df = pd.DataFrame()
+df
 ```
 
 
