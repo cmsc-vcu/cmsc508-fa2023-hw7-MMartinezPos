@@ -10,7 +10,7 @@ format:
         code-copy: true
 ---
 
-(include a brief description of what is in this document)
+In this document is a set of queries that acquire specific information about the sql document and pulls those tables. 
 
 
 GITHUB URL:  <https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-MMartinezPos>
