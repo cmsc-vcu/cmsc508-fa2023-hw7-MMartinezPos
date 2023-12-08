@@ -91,8 +91,11 @@ INSERT INTO people (people_id, people_first_name, people_last_name, people_email
 (3, 'Michael', 'Person 3', 'michael.person3@example.com', 'https://www.linkedin.com/in/michael-person3', 'https://example.com/headshot3.jpg', 'michael_person3#9012', 'Data analyst with a keen eye for insights.', '2023-03-10'),
 (4, 'Emily', 'Person 4', 'emily.person4@example.com', 'https://www.linkedin.com/in/emily-person4', 'https://example.com/headshot4.jpg', 'emily_person4#3456', 'Digital marketing expert passionate about online strategies.', '2023-04-05'),
 (5, 'David', 'Person 5', 'david.person5@example.com', 'https://www.linkedin.com/in/david-person5', 'https://example.com/headshot5.jpg', 'david_person5#7890', 'Experienced public speaker with a focus on effective communication.', '2023-05-15'),
-(6, 'Sophie', 'Person 6', 'sophie.person6@example.com', 'https://www.linkedin.com/in/sophie-person6', 'https://example.com/headshot6.jpg', 'sophie_person6#1234', 'Project manager adept at coordinating tasks and leading teams.', '2023-06-20');
-
+(6, 'Sophie', 'Person 6', 'sophie.person6@example.com', 'https://www.linkedin.com/in/sophie-person6', 'https://example.com/headshot6.jpg', 'sophie_person6#1234', 'Project manager adept at coordinating tasks and leading teams.', '2023-06-20'),
+(7, 'Alex', 'Person 7', 'alex.person7@example.com', 'https://www.linkedin.com/in/alex-person7', 'https://example.com/headshot7.jpg', 'alex_person7#5678', 'Software engineer with a passion for problem-solving.', '2023-07-15'),
+(8, 'Sarah', 'Person 8', 'sarah.person8@example.com', 'https://www.linkedin.com/in/sarah-person8', 'https://example.com/headshot8.jpg', 'sarah_person8#9012', 'UX designer focused on creating intuitive user interfaces.', '2023-08-20'),
+(9, 'Brian', 'Person 9', 'brian.person9@example.com', 'https://www.linkedin.com/in/brian-person9', 'https://example.com/headshot9.jpg', 'brian_person9#3456', 'Data scientist with a knack for uncovering patterns in data.', '2023-09-10'),
+(10, 'Laura', 'Person 10', 'laura.person10@example.com', 'https://www.linkedin.com/in/laura-person10', 'https://example.com/headshot10.jpg', 'laura_person10#7890', 'Product manager with a track record of successful launches.', '2023-10-05');
 
 
 # Section 6

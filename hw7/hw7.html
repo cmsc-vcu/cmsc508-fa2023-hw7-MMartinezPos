@@ -3373,32 +3373,69 @@ z-index: 1000;
 
 </header>
 
-<p>(include a brief description of what is in this document)</p>
+<p>In this document is a set of queries that acquire specific information about the sql document and pulls those tables.</p>
 <p>GITHUB URL: <a href="https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-MMartinezPos" class="uri">https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-MMartinezPos</a></p>
 <section id="overview-and-description" class="level2">
 <h2 class="anchored" data-anchor-id="overview-and-description">Overview and description</h2>
-<p>(briefly describe the project and the database)</p>
+<p>This assignment involves creating a company-wide resume database using MySQL. Your boss has tasked you with building a comprehensive database to capture the skills, certifications, and roles of all employees. This will help your sensei identify specific skills, explore employee skillsets, and identify skill gaps within the company.</p>
 </section>
 <section id="crows-foot-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="crows-foot-diagram">Crows-foot diagram</h2>
-<p>The Diagram shows the relationships between Customers and their Orders and the Delivery-Address.</p>
-<p>CUSTOMER uses one or many DELIVERY-ADDRESSes but a DELIVERY-ADDRESS can also exist without being associated with a CUSTOMER.</p>
-<p>CUSTOMER can place many ORDERs, but each ORDER is associated with exactly one CUSTOMER.</p>
+<p>The diagram illustrates the relationships between Skills, People, Roles, and their associations.</p>
+<p>Skills can be associated with one or many entries in the People-Skills table, indicating the skills possessed by various individuals. Conversely, a person (People) can possess multiple skills, creating a many-to-many relationship.</p>
+<p>People can assume one or many roles (Roles) through the People-Roles table. Each role is filled by one or more individuals, establishing a many-to-many relationship between People and Roles.</p>
+<p>This representation allows for a comprehensive view of how skills, people, and roles are interconnected in the database, facilitating queries and reports related to skill acquisition, employee roles, and overall skill distribution within the organization.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <div>
 <pre class="mermaid mermaid-js">erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
-    CUSTOMER{
-        int id
-        string first_name
-        string last_name
+    SKILLS ||--o{ PEOPLE-SKILLS : ASSOCIATES
+    PEOPLE ||--o{ PEOPLE-SKILLS : POSSESSES
+    PEOPLE ||--o{ PEOPLE-ROLES : ASSUMES
+    ROLES ||--o{ PEOPLE-ROLES : FILLED_BY
+
+    SKILLS {
+        int skills_id
+        varchar(256) skills_name
+        text skills_description
+        varchar(256) skills_tag
+        varchar(256) skills_url
+        varchar(256) skills_time_commitment
     }
-    DELIVERY-ADDRESS {
-        int id
+
+    PEOPLE {
+        int people_id
+        varchar(256) people_first_name
+        varchar(256) people_last_name
+        varchar(256) people_email
+        varchar(256) people_linkedin_url
+        varchar(256) people_headshot_url
+        varchar(256) people_discord_handle
+        varchar(256) people_brief_bio
+        date people_date_joined
     }
+
+    PEOPLE-SKILLS {
+        int id
+        int skills_id
+        int people_id
+        date date_acquired
+    }
+
+    ROLES {
+        int id
+        varchar(256) name
+        int sort_priority
+    }
+
+    PEOPLE-ROLES {
+        int id
+        int people_id
+        int role_id
+        date date_assigned
+    }
+
 </pre>
 </div>
 </div>
